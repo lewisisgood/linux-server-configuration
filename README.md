@@ -11,7 +11,7 @@ The IP address and SSH port so your server can be accessed by the reviewer:
 The complete URL to your hosted web application:
 * http://13.58.140.170.xip.io
 
-## Software installed
+## Software Installed
 * apache2
 * libapache2-mod-wsgi
 * postgresql
@@ -27,14 +27,14 @@ Python packages installed:
 * requests
 * python-psycopg2
 
-## Configuration changes to Ubuntu
-Update all currently installed packages
+## Configuration Changes to Ubuntu
+Update all currently installed packages:
 ```
 sudo apt-get update        # Fetches the list of available updates
 sudo apt-get upgrade       # Strictly upgrades the current packages
 ```
 
-Configure SSH port and setup firewall
+Configure SSH port and setup firewall:
 ```
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -75,9 +75,12 @@ Clone the item catalog project:
 ```
 mkdir /var/www/catalog/
 git clone https://github.com/lewisisgood/item-catalog.git
-// Replace the "engine" line to use Postgres instead of SQLite, in project.py, database_setup.py, lotsofitems.py, with the following line:
-cd /var/www/catalog/item-catalog
-engine = create_engine('postgresql://catalog:categoryis@localhost:5432/catalog')
+cd item-catalog
+```
+
+Replace the "engine" line to use Postgres instead of SQLite in project.py, database_setup.py, lotsofitems.py with the following line:
+```
+engine = create_engine('postgresql://catalog@localhost:5432/catalog')
 ```
 
 Install and configure Apache to serve a Python mod_wsgi application:
@@ -88,29 +91,36 @@ Create a new configuration file, by editing a copy the default configuration fil
 cd /etc/apache2/sites-available
 sudo cp 000-default.conf 100-itemcatalog.conf
 sudo nano 100-itemcatalog.conf
-// Update DocumentRoot property to /var/www/catalog/item-catalog/static
-// Add these lines before </VirtualHost> :
-//WSGIScriptAlias / /var/www/catalog/item-catalog/static/itemcatalog.wsgi
-//    <Directory /var/www/catalog/item-catalog/static>
-//        Order deny,allow
-//        Allow from all
-//    </Directory>
+```
+
+Update DocumentRoot property to /var/www/catalog/item-catalog/static by adding these lines before </VirtualHost> closing tag:
+```
+WSGIScriptAlias / /var/www/catalog/item-catalog/static/itemcatalog.wsgi
+	<Directory /var/www/catalog/item-catalog/static>
+	Order deny,allow
+	Allow from all
+</Directory>
+```
+```
 ln -s ../sites-available/100-itemcatalog.conf 100-itemcatalog.conf        
 sudo apache2ctl restart
 ```
 
-Create a wsgi file, containing the code mod_wsgi executes on startup to get the application object:
+Create a WSGI file, containing the code mod_wsgi executes on startup to get the application object:
 ```
 cd /var/www/catalog/item-catalog/static
 touch itemcatalog.wsgi
 sudo nano itemcatalog.wsgi
-//Paste these lines into file: 
-//import sys
-//sys.path.insert(0, '/var/www/catalog/item-catalog')
-//from project import app as application
+```
+Paste these lines into file:
+```
+import sys
+sys.path.insert(0, '/var/www/catalog/item-catalog')
+from project import app as application
 ```
 
 The Ubuntu instance is now ready to serve the item catalog app.
+
 
 A list of any third-party resources you made use of to complete this project:
 * [Digital Ocean Tutorials](https://www.digitalocean.com/community/tutorials/)
