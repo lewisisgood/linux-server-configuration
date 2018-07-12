@@ -3,7 +3,7 @@ Information for Linux Server Configuration project for Udacity.
 
 Secure an Ubuntu instance in Amazon Lightsail, and deploy an appication to the web via Heroku (in this case, the Item Catalog app).
 
----update these for submission---
+## Accessing the App
 The IP address and SSH port so your server can be accessed by the reviewer:
 * IP 13.58.140.170
 * Port 2200
@@ -11,6 +11,7 @@ The IP address and SSH port so your server can be accessed by the reviewer:
 The complete URL to your hosted web application:
 * https://dashboard.heroku.com/apps/item-catalog-app-lew
 
+## App Information
 Software installed:
 * apache2
 * libapache2-mod-wsgi
@@ -35,5 +36,4 @@ A list of any third-party resources you made use of to complete this project:
 * [Flask Documentation](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/)
 
 ## Authors
-
 * **Lewis King** - [Github](https://github.com/lewisisgood)
