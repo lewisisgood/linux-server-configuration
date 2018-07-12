@@ -9,7 +9,7 @@ The IP address and SSH port so your server can be accessed by the reviewer:
 * Port 2200
 
 The complete URL to your hosted web application:
-* https://dashboard.heroku.com/apps/item-catalog-app-lew
+* https://item-catalog-app-lew.herokuapp.com/
 
 ## App Information
 Software installed:
