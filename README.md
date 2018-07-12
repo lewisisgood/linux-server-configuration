@@ -1,7 +1,7 @@
 # Linux Server Configuration
 Information for Linux Server Configuration project for Udacity.
 
-Secure an Ubuntu instance in Amazon Lightsail, and deploy an appication to the web via Heroku (in this case, the Item Catalog app).
+Secure an Ubuntu instance in Amazon Lightsail, and deploy an appication to the web (in this case, the Item Catalog app).
 
 ## Accessing the App
 The IP address and SSH port so your server can be accessed by the reviewer:
@@ -9,7 +9,7 @@ The IP address and SSH port so your server can be accessed by the reviewer:
 * Port 2200
 
 The complete URL to your hosted web application:
-* https://item-catalog-app-lew.herokuapp.com/
+* http://13.58.140.170.xip.io
 
 ## App Information
 Software installed:
