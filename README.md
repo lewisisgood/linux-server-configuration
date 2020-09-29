@@ -120,9 +120,9 @@ from project import app as application
 The Ubuntu instance is now ready to serve the item catalog app.
 
 
-A list of any third-party resources you made use of to complete this project:
+## Acknowledgements
 * [Digital Ocean Tutorials](https://www.digitalocean.com/community/tutorials/)
 * [Flask Documentation](http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/)
 
-## Authors
+## Author
 * **Lewis King** - [Github](https://github.com/lewisisgood)
