@@ -1,7 +1,5 @@
 # Linux Server Configuration
-Information for Linux Server Configuration project for Udacity.
-
-Secure an Ubuntu instance in Amazon Lightsail, and deploy an appication to the web (in this case, the Item Catalog app).
+Secure an Ubuntu instance in Amazon Lightsail, and deploy an appication to the web (in this case, my [Item Catalog](https://github.com/lewisisgood/item-catalog) app).
 
 ## Accessing the App
 The IP address and SSH port so your server can be accessed by the reviewer:
